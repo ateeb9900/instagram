@@ -11,11 +11,14 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
         message: message
     };
 
-    fetch('/submit', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
+   fetch('https://instagram-4ggo.onrender.com', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData)
+})
+
         body: JSON.stringify(formData)
     })
     .then(response => response.json())
